@@ -13,7 +13,7 @@ void pisca_led(int led, int tempo) {
     delay(tempo);
 }
 
-// Para o programa caso aperte CTRL C
+// Para o programa caso aperte CTRL + C
 void cancela(int s) {
     std::cout << "CTRL-C detectado. " << s << '\n';
     RUNNING = false;
