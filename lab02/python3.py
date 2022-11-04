@@ -42,16 +42,7 @@ if sys.argv[1]== "ligar":
     
     for i in range(5):
         #Ativia um GPIO por vez
-        print(f"Habilitando a gpio{LED_NUMBER_AM} led_num")
-        writeLED (filename="export", value=LED_NUMBER_AM, path=SYSFS_DIR)
-        sleep(0.1)
-        writeLED (filename="direction", value="out", path=LED_PATH_AM)
-    
-        on_off_led(pausa = 1, led_path=LED_PATH_AM)   #LIGA LED AMARELO POR 1 SEGUNDO
-        
-        print(f'Desabilitando a gpio{LED_NUMBER_AM}')
-        writeLED (filename ="unexport", value =LED_NUMBER_AM , path = SYSFS_DIR)
-        
+        #Habilita o GPIO 20 do LED Vermelho
         print(f"Habilitando a gpio{LED_NUMBER_VERM} led_num")
         writeLED (filename="export", value=LED_NUMBER_VERM, path=SYSFS_DIR)
         sleep(0.1)
@@ -62,6 +53,7 @@ if sys.argv[1]== "ligar":
         print(f'Desabilitando a gpio{LED_NUMBER_VERM}')
         writeLED (filename ="unexport", value = LED_NUMBER_VERM , path = SYSFS_DIR)
         
+        #Habilitando GPIO 21 do LED Verde
         print(f"Habilitando a gpio{LED_NUMBER_VERD} led_num")
         writeLED (filename="export", value=LED_NUMBER_VERD, path=SYSFS_DIR)
         sleep(0.1)
@@ -70,7 +62,18 @@ if sys.argv[1]== "ligar":
         on_off_led(pausa = 1,led_path=LED_NUMBER_VERD) #LIGA LED VERDE POR 1 SEGUNDO
 
         print(f'Desabilitando a gpio{LED_NUMBER_VERD}')
-        writeLED (filename ="unexport", value = LED_NUMBER_VERD , path = SYSFS_DIR)        
+        writeLED (filename ="unexport", value = LED_NUMBER_VERD , path = SYSFS_DIR)     
+        
+        #Habilitando o GPIO 16 do LED Amarelo
+        print(f"Habilitando a gpio{LED_NUMBER_AM} led_num")
+        writeLED (filename="export", value=LED_NUMBER_AM, path=SYSFS_DIR)
+        sleep(0.1)
+        writeLED (filename="direction", value="out", path=LED_PATH_AM)
+    
+        on_off_led(pausa = 1, led_path=LED_PATH_AM)   #LIGA LED AMARELO POR 1 SEGUNDO
+        
+        print(f'Desabilitando a gpio{LED_NUMBER_AM}')
+        writeLED (filename ="unexport", value =LED_NUMBER_AM , path = SYSFS_DIR)
         
     #Ativa o GPIO de todos os LEDs
     #for led_num, led_path  in zip(LED_NUMBER, LED_PATH):
@@ -89,7 +92,7 @@ if sys.argv[1]== "ligar":
     #Desativa o GPIO de todos os LEDs
     #for led_num, led_path  in zip(LED_NUMBER, LED_PATH):
     #    print(f'Desabilitando a gpio{led_num}')
-        writeLED (filename ="unexport", value = LED_NUMBER , path = SYSFS_DIR)
+    #    writeLED (filename ="unexport", value = LED_NUMBER , path = SYSFS_DIR)
         
 else:
     print('Comando Inválido. Para ativar o programa, digite ./LED.py ligar.')
