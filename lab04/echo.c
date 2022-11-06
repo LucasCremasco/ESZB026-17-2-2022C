@@ -3,15 +3,10 @@
  * Wiley 2016, ISBN 978-1-119-1868-1, http://www.exploringrpi.com/
  */
 #include<stdio.h>
-
 #include<fcntl.h>
-
 #include<unistd.h>
-
 #include<termios.h>   // biblioteca para comunicacao serial
-
 #include <wiringPi.h>
-
 #include <softPwm.h>
 
 
