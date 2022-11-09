@@ -25,17 +25,13 @@ int main() {                            // este programa deve ser rodado com 'su
    for(ciclos = 0; ciclos < 2; ciclos++){  // variando o duty cycle
     for(dc = 0; dc < 5; dc++){
         pwmWrite(pino_PWM0, 3494/2);	
-        usleep(250000);
+        usleep(150000);
 	      pwmWrite(pino_PWM0, 0);
 	      usleep(100000);
-      if (dc = 2) {
-      usleep(2000000);
+      if (dc == 2) {
+      usleep(250000);
       }
- //}
-      //for(dc = 128; dc >= 0; dc--){
-        // pwmWrite(pino_PWM0, dc);
-        // usleep(10000);
-     //}
+ }usleep(2000000);
    }
 
    printf("Fim.\n");
