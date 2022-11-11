@@ -24,8 +24,8 @@ int main() {                            // este programa deve ser rodado com 'su
    printf("Iniciando...\n");
    //for(ciclos = 0; ciclos < 2; ciclos++){  // variando o duty cycle
     //for(dc = 0; dc < 100; dc++){
-        pwmWrite(pino_PWM0, 26);
-	printf("dc: %d\n", 26);
+        pwmWrite(pino_PWM0, 27);
+	printf("dc: %d\n", 27);
         usleep(10000000);
 	      
 	//      usleep(100000);
