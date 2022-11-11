@@ -30,7 +30,7 @@ int main() {                            // este programa deve ser rodado com 'su
 	      
 	//      usleep(100000);
  //}
-   }
+   //}
 	pwmWrite(pino_PWM0, 0);
 
    printf("Fim.\n");
