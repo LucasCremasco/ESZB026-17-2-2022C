@@ -26,11 +26,12 @@ int main() {                            // este programa deve ser rodado com 'su
     for(dc = 0; dc < 100; dc++){
         pwmWrite(pino_PWM0, dc);
 	printf("dc: %d\n", dc);
-        //usleep(150000);
-	//      pwmWrite(pino_PWM0, 0);
+        usleep(1000000);
+	      
 	//      usleep(100000);
  //}
    }
+	pwmWrite(pino_PWM0, 0);
 
    printf("Fim.\n");
    return 0;                            // a saida PWM permanece ligada apos o termino do programa
