@@ -15,23 +15,16 @@ int main() {                            // este programa deve ser rodado com 'su
    wiringPiSetupGpio();                 // usa a numeracao da GPIO
    pinMode(pino_PWM0, PWM_OUTPUT);      // configura a GPIO18 com o PWM por hardware
 
-   // Ajustando a frequencia do PWM em 10kHz com 128 passos de duty cycle
    // frequencia PWM = 19,2 MHz / (divisor * range)
-   // 261,6 = 19200000 / (divisor * 128) => divisor = 15
+   // 33862,43 Hz = 19200000 / (27 * 21)
    pwmSetMode(PWM_MODE_MS);             // usando frequencia fixa
    pwmSetRange(100);                    // passos do duty cycle (max=4096)
    pwmSetClock(21);                     // fornece uma frequencia de 10kHz (max=4096)
    printf("Iniciando...\n");
-   //for(ciclos = 0; ciclos < 2; ciclos++){  // variando o duty cycle
-    //for(dc = 0; dc < 100; dc++){
-        pwmWrite(pino_PWM0, 27);
-	printf("dc: %d\n", 27);
-        usleep(10000000);
-	      
-	//      usleep(100000);
- //}
-   //}
-	pwmWrite(pino_PWM0, 0);
+        pwmWrite(pino_PWM0, 27);	//Define o duty cycle de 27
+	printf("dc: %d\n", 27);		//Printa na tela o valor do duty cycle
+        usleep(10000000);		//Mantém o motor em rotação por 10 sec
+	pwmWrite(pino_PWM0, 0);		//Desliga o motor
 
    printf("Fim.\n");
    return 0;                            // a saida PWM permanece ligada apos o termino do programa
